@@ -1,0 +1,43 @@
+{
+  "cwd": ".",
+  "cmd": "node --test \"src/*.test.js\"",
+  "kind": "node",
+  "_note": "Run from the repository root: node bin/mutation-proof.mjs --spec fixtures/example-project/mutations.json — the exit code is 1 because two of these are UNCLEAR on purpose.",
+  "mutations": [
+    {
+      "name": "the id guard in placeOrder",
+      "file": "src/orders.js",
+      "from": "if (!order || typeof order.id !== \"string\" || order.id.length === 0) {",
+      "to": "if (false) {",
+      "_expect": "FIRED — 'rejects an order without an id' and 'rejects an empty id' both go red."
+    },
+    {
+      "name": "the zero-width stripper",
+      "file": "src/normalize.js",
+      "from": "String(s).replace(new RegExp(INVISIBLE_SOURCE, \"g\"), \"\")",
+      "to": "String(s)",
+      "_expect": "FIRED — 'strips a zero-width space' goes red."
+    },
+    {
+      "name": "the zero-width test datum",
+      "file": "src/normalize.test.js",
+      "from": "const ZWSP = \"\u200B\";",
+      "to": "const ZWSP = \"\";",
+      "_expect": "FIRED — and read WHICH tests go red. 'detects a zero-width space' and 'hasInvisible is not stateful across calls' fail; 'strips a zero-width space' stays GREEN, because with an empty constant its assertion reads \"ab\" === \"ab\". Red is not proof until you have checked which assertion tripped. This mutation is the evidence behind the entry in control-chars.baseline.json."
+    },
+    {
+      "name": "the id written into the created event",
+      "file": "src/orders.js",
+      "from": "ledger.push({ type: \"event.order.created\", id: order.id });",
+      "to": "ledger.push({ type: \"event.order.created\" });",
+      "_expect": "UNCLEAR — and THIS is the interesting one. A test named 'every order event carries an id' exists and stays green, because its filter matches nothing. The suite claims to guard this. It does not. dead-filters finds the same defect statically."
+    },
+    {
+      "name": "a mutation whose anchor no longer exists",
+      "file": "src/orders.js",
+      "from": "if (order.id === undefined) throw new Error('gone')",
+      "to": "if (false) throw new Error('gone')",
+      "_expect": "UNCLEAR (anchor missing) — a mutation that cannot be applied is never a silent skip. Reported as 'no guard', it would send you off to build one that already exists."
+    }
+  ]
+}

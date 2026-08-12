@@ -1,0 +1,9 @@
+{
+  "name": "example-project",
+  "private": true,
+  "type": "module",
+  "description": "A tiny project with one planted defect per tool. Nothing here is real; everything here is broken on purpose.",
+  "scripts": {
+    "test": "node --test \"src/*.test.js\""
+  }
+}

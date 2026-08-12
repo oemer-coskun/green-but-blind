@@ -1,0 +1,8 @@
+[
+  {
+    "file": "fixtures/example-project/src/normalize.test.js",
+    "codePoint": 8203,
+    "count": 1,
+    "reason": "DELIBERATE and PINNED: a raw ZERO WIDTH SPACE as the test datum for stripInvisible(). Writing it as an escape would test the escape, not the character. Verified 2026-08-12 with this repository's own mutation-proof: blank the ZWSP constant and exactly two tests go red — 'detects a zero-width space' and 'hasInvisible is not stateful across calls'. Note which test does NOT go red: 'strips a zero-width space' stays green, because with an empty constant its assertion reads \"ab\" === \"ab\". Reproduce with: node bin/mutation-proof.mjs --spec fixtures/example-project/mutations.json --only \"the zero-width test datum\". The count is pinned at 1 — a second raw character in this file turns the gate red."
+  }
+]
