@@ -1,0 +1,47 @@
+{
+  "name": "green-but-blind",
+  "version": "1.0.0",
+  "description": "Four scanners that find tests which pass without testing anything, and control characters that break code invisibly.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "control-chars": "bin/control-chars.mjs",
+    "mutation-proof": "bin/mutation-proof.mjs",
+    "second-lists": "bin/second-lists.mjs",
+    "dead-filters": "bin/dead-filters.mjs"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md",
+    "README.de.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "check": "npm run gate:control-chars && npm test",
+    "gate:control-chars": "node bin/control-chars.mjs --root lib --root bin --root test --root fixtures",
+    "demo:control-chars": "node bin/control-chars.mjs --report --root fixtures/example-project",
+    "demo:second-lists": "node bin/second-lists.mjs --root fixtures/example-project/src",
+    "demo:dead-filters": "node bin/dead-filters.mjs --root fixtures/example-project/src",
+    "demo:mutation-proof": "node bin/mutation-proof.mjs --spec fixtures/example-project/mutations.json"
+  },
+  "keywords": [
+    "testing",
+    "test-quality",
+    "mutation-testing",
+    "vacuous-assertions",
+    "static-analysis",
+    "control-characters",
+    "trojan-source",
+    "unicode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestMoneyDE/green-but-blind.git"
+  },
+  "author": "Ömer Coskun"
+}
