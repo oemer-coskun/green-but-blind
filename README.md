@@ -213,6 +213,15 @@ nobody reads a clean run as "there is nothing there".
 The repository's own control-character baseline has exactly one entry: a
 deliberate zero-width space in a fixture, with a reason and a verified count.
 
+## Authors
+
+**Ömer Coskun** ([@WestMoneyDE](https://github.com/WestMoneyDE)) — the tools, the
+incidents behind them, and the rules that came out of both.
+
+Built with [Claude Code](https://claude.com/claude-code), which did the work of
+lifting them out of the project they were written in and into something that runs
+somewhere else.
+
 ## Licence
 
 MIT — see [LICENSE](LICENSE).

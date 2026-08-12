@@ -229,6 +229,15 @@ Die eigene Steuerzeichen-Grundlinie des Repos hat genau einen Eintrag: ein
 absichtliches Nullbreiten-Zeichen in einer Testdatei, mit Begründung und
 nachgemessener Anzahl.
 
+## Autoren
+
+**Ömer Coskun** ([@WestMoneyDE](https://github.com/WestMoneyDE)) — die Werkzeuge,
+die Vorfälle dahinter und die Regeln, die aus beidem wurden.
+
+Gebaut mit [Claude Code](https://claude.com/claude-code), das die Arbeit
+übernommen hat, sie aus dem Projekt herauszulösen, in dem sie entstanden sind,
+und in etwas zu überführen, das auch woanders läuft.
+
 ## Lizenz
 
 MIT — siehe [LICENSE](LICENSE).
