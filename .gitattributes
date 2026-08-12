@@ -1,0 +1,7 @@
+# Normalise to LF in the repository, whatever the contributor's platform does.
+#
+# This matters more here than usual: mutation-proof detects a file's line ending
+# and rewrites the file around a text anchor. Mixed endings inside one checkout
+# would make an anchor fail to match for reasons that have nothing to do with the
+# code under test.
+* text=auto eol=lf
