@@ -119,7 +119,7 @@ gepflanzten Defekt pro Werkzeug. **Alle neun seiner Tests sind grün** — das i
 der Punkt.
 
 ```bash
-git clone https://github.com/WestMoneyDE/green-but-blind
+git clone https://github.com/oemer-coskun/green-but-blind
 cd green-but-blind
 
 node --test "fixtures/example-project/src/*.test.js"   # 9 Tests, 9 grün
@@ -231,7 +231,7 @@ nachgemessener Anzahl.
 
 ## Autoren
 
-**Ömer Coskun** ([@WestMoneyDE](https://github.com/WestMoneyDE)) — die Werkzeuge,
+**Ömer Coskun** ([@oemer-coskun](https://github.com/oemer-coskun)) — die Werkzeuge,
 die Vorfälle dahinter und die Regeln, die aus beidem wurden.
 
 Gebaut mit [Claude Code](https://claude.com/claude-code), das die Arbeit

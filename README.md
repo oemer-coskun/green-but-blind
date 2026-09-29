@@ -107,7 +107,7 @@ There is a small example project under `fixtures/example-project` with one
 planted defect per tool. **All nine of its tests pass** — that is the point.
 
 ```bash
-git clone https://github.com/WestMoneyDE/green-but-blind
+git clone https://github.com/oemer-coskun/green-but-blind
 cd green-but-blind
 
 node --test "fixtures/example-project/src/*.test.js"   # 9 tests, 9 pass
@@ -215,7 +215,7 @@ deliberate zero-width space in a fixture, with a reason and a verified count.
 
 ## Authors
 
-**Ömer Coskun** ([@WestMoneyDE](https://github.com/WestMoneyDE)) — the tools, the
+**Ömer Coskun** ([@oemer-coskun](https://github.com/oemer-coskun)) — the tools, the
 incidents behind them, and the rules that came out of both.
 
 Built with [Claude Code](https://claude.com/claude-code), which did the work of
